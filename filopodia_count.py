@@ -51,7 +51,6 @@ def process(path_whole, path_gray,
                                                    df_whole_uncleaned,
                                                    'Finish cleaning of whole image')
     
-    cv2.imwrite('test/whole_cleaned.jpg', whole_clean)
     df_whole_cleaned = Functions_c.extract_topo(whole_clean,
                            'Finish information extraction of whole image(cleaned)')
     df_whole_cleaned['new_node1'] = df_whole_cleaned['node1'].apply(lambda x: x)
@@ -119,7 +118,6 @@ def process(path_whole, path_gray,
     iter1 = Functions_c.iterative_thresh(1, part1,
                                 'Finish the thresholding of uncleaned filopodia image with iteration 2')
     
-    cv2.imwrite('test/iter1.jpg', iter1)
 
     iter10 = Functions_c.iterative_thresh(10, part1,
                                 'Finish the thresholding of uncleaned filopodia image with iteration 11')
@@ -134,7 +132,6 @@ def process(path_whole, path_gray,
     df_clean = Functions_c.extract_topo(filo_clean,
                                         'Finish extracting the topology information of cleaned filopodia image')
     
-    cv2.imwrite('test/cleanfilo.jpg', filo_clean)
 
     # now decide whether to use microglia cell removal
     if mircog == True:
@@ -176,7 +173,6 @@ def process(path_whole, path_gray,
                                         'Finish extracting the topology information of cleaned filopodia image, finally')
     
     search = filo_final.copy()
-    cv2.imwrite('test/finalfilo.jpg', search)
     # Calculate the scaling factor
     scaling_factor = 1 / zoom
 
