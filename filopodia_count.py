@@ -94,7 +94,7 @@ def process(path_whole, path_gray,
     # set diameter as
     d1 = -min(min_rect_box[:,0]) + max(min_rect_box[:,0])
     d2 = -min(min_rect_box[:,1]) + max(min_rect_box[:,1])
-    diam = (d1 + d2) / 4 / 2
+    diam = (d1 + d2) / 5 / 2
 
     tip = []
     for node in degreeonetwo:
