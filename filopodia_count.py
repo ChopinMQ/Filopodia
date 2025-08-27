@@ -98,7 +98,7 @@ def process(path_whole, path_gray,
 
     tip = []
     for node in degreeonetwo:
-        if cv2.norm(node, mid, cv2.NORM_L2) >= diam:
+      if euclidean(tuple(node), tuple(mid)) >= float(diam):
             tip.append(node)
 
     df_whole_cleaned['new_node1'] = df_whole_cleaned['node1'].apply(lambda x: x)
