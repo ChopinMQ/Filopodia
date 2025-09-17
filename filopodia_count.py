@@ -94,7 +94,7 @@ def process(path_whole, path_gray,
     # set diameter as
     d1 = -min(min_rect_box[:,0]) + max(min_rect_box[:,0])
     d2 = -min(min_rect_box[:,1]) + max(min_rect_box[:,1])
-    diam = (d1 + d2) / 5 / 2
+    diam = (d1 + d2) / 15
 
     tip = []
     for node in degreeonetwo:
@@ -260,7 +260,7 @@ def process(path_whole, path_gray,
     cv2.drawContours(mask, [largest_contour], -1, 255, thickness=cv2.FILLED)
     result_image = cv2.bitwise_and(binary_image, mask)
 
-    border_size = 1
+    border_size = 4
     border_color = [255, 255, 255]
     img_with_border = cv2.copyMakeBorder(result_image,
                                         border_size,
@@ -569,3 +569,4 @@ def character_function(edge, gr, data, dist):
         return dict
     except:
         return -1
+
